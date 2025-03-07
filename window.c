@@ -1,5 +1,8 @@
-#include "./minilibx-linux/mlx.h"
+#include "mlx/mlx.h"
 #include "so_long.h"
+#include <fcntl.h>
+
+static void ft_print_strs(char **strs);
 
 void	app_init(t_app *app)
 {
@@ -11,31 +14,38 @@ void	app_init(t_app *app)
 
 int main()
 {
-	t_app	app;
+	// t_app	app;
+	int i = 6;
+	int j = 0;
+	int fd = open("map.ber",O_RDONLY);
+	printf("%i\n",fd);
+	char **map = ft_calloc(40,sizeof(char *));
 
-	char	matrice[7][14] =
+	while(i)
 	{
-		{'1','1','1','1','1','1','1','1','1','1','1','1','1','\0'},
-		{'1','0','0','0','0','0','1','0','0','0','0','1','1', '\0'},
-		{'1','0','1','1','1','0','0','0','1','1','0','C','1', '\0'},
-		{'1','0','C','1','1','1','1','1','1','0','0','1','1', '\0'},
-		{'1','P','1','E','0','0','0','0','0','0','1','1','1', '\0'},
-		{'1','1','1','1','1','1','1','1','1','1','1','1','1', '\0'},
-		{'\0'},
-	};
+		map[j] = get_next_line(fd);
+		printf("%s",map[j]);
+		i--;
+		j++;
+	}
+	ft_print_strs(map);
+	// if (check_map((char **)matrice))
+	// 	printf("si\n");
+	// else
+	// 	printf("no\n");
 
-	char **mat = get_map();
-	if (check_map((char **)matrice))
-		printf("si\n");
-	else
-		printf("no\n");
-
-
-/*
-	app_init(&app);
-	mlx_new_image(app.mlx, app.width, app.height);
-	//init_img(&app);
-	mlx_loop(app.mlx);*/
+	// app_init(&app);
+	// mlx_new_image(app.mlx, app.width, app.height);
+	// mlx_loop(app.mlx);
 	return (0);
 }
 
+static void ft_print_strs(char **strs)
+{
+	int i = 0;
+	while(strs && strs[i])
+	{
+		printf("%s\n",strs[i]);
+		i++;
+	}
+}

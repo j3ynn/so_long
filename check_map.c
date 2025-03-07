@@ -66,7 +66,7 @@ int	save_num(char c)
 
 int	check_walls_y(char **map)
 {
-	int	x;
+	// int	x;
 	int	y;
 	int	len;
 

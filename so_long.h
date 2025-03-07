@@ -5,9 +5,8 @@
 # include <stdio.h>
 # include <stdint.h>
 # include <stdlib.h>
-# include "./minilibx-linux/mlx.h"
-# include "./libft/header_files/get_next_line.h"
 # include <fcntl.h>
+#include "libft/libft.h"
 
 
 
@@ -82,5 +81,6 @@ int		check_walls_y(char **map);
 int		check_walls_x(char *line);
 
 char **get_map();
+// GNL utils
 
 #endif

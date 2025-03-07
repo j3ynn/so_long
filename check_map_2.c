@@ -6,7 +6,7 @@ void	find_cord(char **map, int *start_x, int *start_y);
 int	check_shape(char **map)
 {
 	int	y;
-	int	len;
+	size_t	len;
 
 	len = ft_strlen(map[0]);
 	y = 1;

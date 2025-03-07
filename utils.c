@@ -1,19 +1,6 @@
 #include "so_long.h"
 
 char    *ft_strdup(const char *s);
-size_t	ft_strslen(char **mat);
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	p;
-
-	p = 0;
-	while (str && str[p] != '\0')
-	{
-		p ++;
-	}
-	return (p);
-}
 
 char	**ft_strsdup(char **strs)
 {
@@ -50,25 +37,6 @@ void	ft_free_strs(char **strs)
 		i++;
 	}
 	free(strs);
-}
-
-char    *ft_strdup(const char *s)
-{
-        size_t  len;
-        char    *s_dup;
-        char    *s2;
-
-        len = ft_strlen(s);
-        s_dup = malloc(sizeof(char) * (len + 1));
-        s2 = s_dup;
-        while (*s)
-        {
-                *s_dup = *s;
-                s_dup ++;
-                s ++;
-        }
-        *s_dup = '\0';
-        return (s2);
 }
 
 size_t	ft_strslen(char **mat)
