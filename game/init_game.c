@@ -1,6 +1,6 @@
-#include "so_long.h"
+#include "../so_long.h"
 
-int	allocate_map(t_game *game)
+int	all_map(t_game *game)
 {
 	game->map = malloc(sizeof(t_map));
 	if (!game->map)
@@ -10,7 +10,7 @@ int	allocate_map(t_game *game)
 	return (1);
 }
 
-int	load_map_data(t_game *game, int fd)
+int	map_str(t_game *game, int fd)
 {
 	char	*line;
 	int		i;
@@ -42,12 +42,12 @@ int	init_map(t_game *game)
 {
 	int	fd;
 
-	if (!allocate_map(game))
+	if (!all_map(game))
 		return (0);
 	fd = open(game->file_path, O_RDONLY);
 	if (fd < 0)
 		return (0);
-	if (!load_map_data(game, fd))
+	if (!map_str(game, fd))
 	{
 		free(game->map);
 		close(fd);
@@ -57,7 +57,7 @@ int	init_map(t_game *game)
 	return (1);
 }
 
-int	init_game(t_game *game)
+int	game_init(t_game *game)
 {
 	game->c_player = 0;
 	game->c_coin = 0;
@@ -68,6 +68,6 @@ int	init_game(t_game *game)
 	game->coin = NULL;
 	game->player = NULL;
 	game->exit = NULL;
-	ft_printf("hola!\n");
+	ft_printf("run :)\n");
 	return (1);
 }
