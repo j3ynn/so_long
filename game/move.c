@@ -25,6 +25,8 @@ int	exit_hook(t_game *game)
 
 void	move_pc(t_game *game, int new_x, int new_y)
 {
+	if (new_x < 0 || new_y < 0 || new_y >= game->map->height || new_x >= game->map->width)
+    	return;
 	if (!game || !game->map || !game->map->maps)
 	{
 		ft_printf("no no no struttura non inizializzata\n");
@@ -40,6 +42,7 @@ void	move_pc(t_game *game, int new_x, int new_y)
 				return ;
 			ft_printf("hai vinto veramente ? ;)\n");
 			back_free(game);
+			return ;
 		}
 		game->steps++;
 		game->map->maps[game->y][game->x] = '0';

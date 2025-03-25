@@ -20,12 +20,15 @@ void	clear_mat(char **matrix, int height)
 
 void	back_free(t_game *game)
 {
+	if (!game)
+		return ;
 	if (game->mlx_ptr && game->mlx_win)
 		mlx_destroy_window(game->mlx_ptr, game->mlx_win);
 	if (game->map)
 	{
 		if (game->map->maps)
 			clear_mat(game->map->maps, game->map->height);
+			//free(game->map);
 	}
 	if (game->mapcopy)
 		clear_mat(game->mapcopy, game->map->height);
