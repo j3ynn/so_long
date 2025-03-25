@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: je <je@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 14:35:22 by je                #+#    #+#             */
-/*   Updated: 2025/03/14 16:08:36 by je               ###   ########.fr       */
+/*   Updated: 2025/03/19 16:11:19 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_printf(const char *s, ...)
 	int		count;
 
 	count = 0;
-	va_start(args, *s);
+	va_start(args, s);
 	while (*s)
 	{
 		if (*s == '%')

@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	if (!game->mlx_ptr)
 	return (1);
 	game->mlx_win = mlx_new_window(game->mlx_ptr,
-		game->map->width * 80, game->map->height * 80,
+		game->map->width * 32, game->map->height * 32,
 		"slay");
 	ft_printf("ho superato slay");
 	if (!game->mlx_win)

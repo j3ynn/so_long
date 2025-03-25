@@ -6,15 +6,15 @@ void	init_imgs(t_game *game)
 	int	width;
 	int	height;
 
-	game->wall = mlx_xpm_file_to_image(game->mlx_ptr, "./graphics/base.png",
+	game->floor = mlx_xpm_file_to_image(game->mlx_ptr, "./graphics/base.xpm",
 		&width, &height);
-	game->wall = mlx_xpm_file_to_image(game->mlx_ptr, "./graphics/bush.png",
+	game->wall = mlx_xpm_file_to_image(game->mlx_ptr, "./graphics/bush.xpm",
 		&width, &height);
-	game->wall = mlx_xpm_file_to_image(game->mlx_ptr, "./graphics/candy.png",
+	game->coin = mlx_xpm_file_to_image(game->mlx_ptr, "./graphics/candy.xpm",
 		&width, &height);
-	game->wall = mlx_xpm_file_to_image(game->mlx_ptr, "./graphics/kid1.png",
+	game->player = mlx_xpm_file_to_image(game->mlx_ptr, "./graphics/kid1.xpm",
 		&width, &height);
-	game->wall = mlx_xpm_file_to_image(game->mlx_ptr, "./graphics/van.png",
+	game->exit = mlx_xpm_file_to_image(game->mlx_ptr, "./graphics/van.xpm",
 		&width, &height);
 }
 

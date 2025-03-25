@@ -25,6 +25,11 @@ int	exit_hook(t_game *game)
 
 void	move_pc(t_game *game, int new_x, int new_y)
 {
+	if (!game || !game->map || !game->map->maps)
+	{
+		ft_printf("no no no struttura non inizializzata\n");
+		return ;
+	}
 	if (game->map->maps[new_y][new_x] != '1')
 	{
 		if (game->map->maps[new_y][new_x] == 'C')

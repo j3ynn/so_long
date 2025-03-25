@@ -6,6 +6,7 @@
 # include <fcntl.h>
 # include <stddef.h>
 
+
 typedef struct s_map
 {
 	char	**maps;
