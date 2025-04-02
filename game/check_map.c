@@ -14,7 +14,6 @@ int	check_num(t_game *game)
 		x = 0;
 		while (x < len-1)
 		{
-			//printf("--- %d---\n",game->c_coin);
 
 			if (game->map->maps[y][x] != 'C' && game->map->maps[y][x] != 'E'
 				&& game->map->maps[y][x] != 'P' && game->map->maps[y][x] != '0'
@@ -30,10 +29,6 @@ int	check_num(t_game *game)
 
 void	save_num(char c, t_game *game)
 {
-	//static int	col;
-	//static int	exi;
-	//static int	str;
-
 	if (c == 'C')
 		game->c_coin++;
 	if (c == 'E')
@@ -44,14 +39,6 @@ void	save_num(char c, t_game *game)
 		ft_printf("COIN TOTAL:%d", game->c_coin);
 		ft_printf("COIN TOTAL:%d", game->c_player);
 	}
-	/*if (c == 'J')
-	{
-		if (exi != 1 || str != 1)
-			return (0);
-		if (game->c_coin < 1)
-			return (0);
-	}
-	return (1);*/
 }
 
 int	check_walls_y(char **map)

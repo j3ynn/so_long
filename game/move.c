@@ -45,22 +45,30 @@ void	move_pc(t_game *game, int new_x, int new_y)
 	{
 		if (game->map->maps[new_y][new_x] == 'C')
 			game->c_coin--;
-		if (game->map->maps[new_y][new_x] == 'E' && game->c_coin == 0)
+		if (game->map->maps[new_y][new_x] == 'E')
 		{
-		/*if(game->c_coin != 0)
-				return ;*/
+			if (game->c_coin == 0)
+			{
+
+				ft_printf("DIOCANEEEEEEEEEEE\n");
 				ft_printf("\ncoin :%d\n", game->c_coin);
-			ft_printf("hai vinto veramente ? ;)\n");
-			back_free(game);
-			return ;
+				ft_printf("hai vinto veramente ? ;)\n");
+				back_free(game);
+				return ;
+			}
 		}
-		game->steps++;
-		game->map->maps[game->y][game->x] = '0';
-		game->y = new_y;
-		game->x = new_x;
-		game->map->maps[new_y][new_x] = 'P';
-		ft_printf("movements: %d\n", game->steps);
-		ft_printf("diomaranza");
+		if (game->map->maps[new_y][new_x] == 'E' && game->c_coin != 0)
+				ft_printf("NON Se PuOoOoO\n");
+		else
+		{
+
+			game->steps++;
+			game->map->maps[game->y][game->x] = '0';
+			game->y = new_y;
+			game->x = new_x;
+			game->map->maps[new_y][new_x] = 'P';
+			ft_printf("movements: %d\n", game->steps);
+		}
 	}
 }
 
