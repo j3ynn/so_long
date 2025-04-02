@@ -10,7 +10,7 @@ char	*ft_strchr(char *str, int s)
 	}
 	if (s == '\0' && (char)s == '\0')
 		return ((char *)str);
-	return (0);
+	return (NULL);
 }
 
 char	*ft_strjoin(char *s1, char *s2)

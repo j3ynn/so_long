@@ -26,6 +26,7 @@ int	main(int argc, char **argv)
 	map_str(game, open(argv[1], O_RDONLY));
 	if (!check_map(game))
 		return (1);
+	ft_printf("PROVA MAIN\n");
 	if (!game->mlx_ptr)
 	return (1);
 	game->mlx_win = mlx_new_window(game->mlx_ptr,

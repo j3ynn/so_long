@@ -86,6 +86,7 @@ int	check_path(char **map)
 		}
 		if (ft_strchr(dupmap[i], 'C') != NULL)
 		{
+			ft_printf("Error: il player non puo' raggiungere l'uscita\n");
 			ft_free_strs(dupmap);
 			return (0);
 		}
