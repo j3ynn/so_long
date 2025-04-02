@@ -2,7 +2,7 @@ NAME	= so_long
 
 CC      = gcc
 
-CFLAGS  = -Wall -Wextra -Werror #-g
+CFLAGS  = -Wall -Wextra -Werror -g
 LINKS = -Lmlx -lmlx -lGL -lX11 -lXext
 
 SRCS	= $(wildcard game/*.c) $(wildcard utils/*.c) main.c

@@ -71,3 +71,28 @@ int	game_init(t_game *game)
 	ft_printf("run :)\n");
 	return (1);
 }
+
+void	save_point(t_game *game, char c)
+{
+	int	x;
+	int	y;
+
+	x = 0;
+	y = 0;
+	while (game->map->maps[x])
+	{
+		y = 0;
+		while (game->map->maps[x][y])
+		{
+			if (game->map->maps[x][y] == c)
+			{
+				game->x = y;
+				game->y = x;
+				return ;
+			}
+			y++;
+		}
+		x++;
+	}
+	return ;
+}

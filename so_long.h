@@ -1,5 +1,5 @@
 
-#ifndef SO_LONG_H
+# ifndef SO_LONG_H
 # define SO_LONG_H
 # include "./utils/utils.h"
 # include "mlx/mlx.h"
@@ -21,6 +21,8 @@ typedef struct s_game
 	char	**mapcopy;
 	void	*mlx_ptr;
 	void	*mlx_win;
+	//da eliminare
+	//int		mlx_destroy_image(void *mlx_ptr, void *img_ptr);
 	void	*wall;
 	void	*floor;
 	void	*player;
@@ -50,6 +52,9 @@ void	fill_path(char **map, int x, int y);
 void	find_cord(char **map, int *start_x, int *start_y);
 void	fill_path(char **map, int x, int y);
 void	find_cord(char **map, int *start_x, int *start_y);
+void	clean_img(t_game *game);
+void	save_point(t_game *game, char c);
+void	save_num(char c, t_game *game);
 
 int		exit_hook(t_game *game);
 int		move_kays(int keycode, t_game *game);
@@ -59,11 +64,10 @@ int		all_map(t_game *game);
 int		map_str(t_game *game, int fd);
 int		init_map(t_game *game);
 int		game_init(t_game *game);
-int		check_num(char **map);
-int		save_num(char c);
+int		check_num(t_game *game);
 int		check_walls_y(char **map);
 int		check_walls_x(char *line);
-int		check_map(char **map);
+int		check_map(t_game *game);
 int		check_shape(char **map);
 int		check_path(char **map);
 #endif

@@ -1,49 +1,57 @@
 #include "../so_long.h"
+#include "stdio.h"
 
-int	check_num(char **map)
+int	check_num(t_game *game)
 {
 	int	x;
 	int	y;
 	int	len;
 
-	len = ft_strlen(map[0]);
-	y = 1;
-	while (map[y])
+	len = ft_strlen(game->map->maps[0]);
+	y = 0;
+	while ((size_t)y < ft_strslen(game->map->maps))
 	{
-		x = 1;
-		while (map[y][x < len])
+		x = 0;
+		while (x < len-1)
 		{
-			if (ft_strchr("01CEP", map[y][x]) == NULL)
-				return (0); //point(0)
-			save_num(map[y][x]);
+			//printf("--- %d---\n",game->c_coin);
+
+			if (game->map->maps[y][x] != 'C' && game->map->maps[y][x] != 'E'
+				&& game->map->maps[y][x] != 'P' && game->map->maps[y][x] != '0'
+				&& game->map->maps[y][x] != '1')
+				return (0);
+			save_num(game->map->maps[y][x], game);
 			x ++;
 		}
 		y ++;
 	}
-	return (save_num('J'));
+	return (1);
 }
 
-int	save_num(char c)
+void	save_num(char c, t_game *game)
 {
-	static int	col;
-	static int	exi;
-	static int	str;
+	//static int	col;
+	//static int	exi;
+	//static int	str;
 
 	if (c == 'C')
-		col ++;
+		game->c_coin++;
 	if (c == 'E')
-		exi ++;
+		game->c_exit++;
 	if (c == 'P')
-		str ++;
-
-	if (c == 'J')
+	{
+		game->c_player++;
+		ft_printf("COIN TOTAL:%d", game->c_coin);
+		ft_printf("COIN TOTAL:%d", game->c_player);
+	}
+	/*if (c == 'J')
 	{
 		if (exi != 1 || str != 1)
 			return (0);
-		if (col < 1)
+		if (game->c_coin < 1)
 			return (0);
 	}
-	return (1);
+	return (1);*/
 }
 
 int	check_walls_y(char **map)
@@ -57,12 +65,14 @@ int	check_walls_y(char **map)
 		return (0);
 	while (map[y + 1])
 	{
-		if (map[y][0] != 1)
+		//printf("%c %c --- \n",map[y][0],map[y][len -2]);
+		if (map[y][0] != '1')
 			return (0);
-		if (map[y][len] != 1)
+		if (map[y][len - 2] != '1')
 			return (0);
 		y ++;
 	}
+
 	if (!check_walls_x(map[y]))
 		return (0);
 	return (1);
@@ -73,24 +83,25 @@ int	check_walls_x(char *line)
 	int	x;
 
 	x = 0;
-	while (line[x])
+	while (line[x] && line[x] != '\n')
 	{
-		if (line[x] != 1)
+		if (line[x] != '1')
 			return (0);
 		x ++;
 	}
 	return (1);
 }
 
-int	check_map(char **map)
+int	check_map(t_game *game)
 {
-	if (!check_shape(map))
+
+	if (!check_shape(game->map->maps))
 		return (0);
-	if (!check_walls_y(map))
+	if (!check_walls_y(game->map->maps))
 		return (0);
-	if (!check_num(map))
+	if (!check_num(game))
 		return (0);
-	if (!check_path(map))
+	if (!check_path(game->map->maps))
 		return (0);
 	return (1);
 }
