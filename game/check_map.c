@@ -33,11 +33,7 @@ void	save_num(char c, t_game *game)
 	if (c == 'E')
 		game->c_exit++;
 	if (c == 'P')
-	{
 		game->c_player++;
-		ft_printf("COIN TOTAL:%d", game->c_coin);
-		ft_printf("PLAYER TOTAL:%d", game->c_player);
-	}
 }
 
 int	check_walls_y(char **map)
@@ -80,14 +76,27 @@ int	check_walls_x(char *line)
 
 int	check_map(t_game *game)
 {
+	if (!game->map->maps)
+	{
+		ft_printf("Error: map is empty!\n");
+		return (0);
+	}
 	if (!check_shape(game->map->maps))
+	{
+		ft_printf("Error: the map is not rectangular!\n");
 		return (0);
+	}
 	if (!check_walls_y(game->map->maps))
+	{
+		ft_printf("Error: one or more walls are incomplete!\n");
 		return (0);
+	}
 	if (!check_num(game))
+	{
+		ft_printf("Error: invalid elements on the map!\n");
 		return (0);
-	ft_printf("PROVA CHECK MAP\n");
-	if (!check_path(game->map->maps))
+	}
+	if (!check_path(game->map->maps, 0))
 		return (0);
 	return (1);
 }

@@ -1,0 +1,202 @@
+main.c: Error!
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+Error: SPACE_BEFORE_FUNC    (line:   4, col:  12):	space before function name
+Error: CONSECUTIVE_NEWLINES (line:  15, col:   1):	Consecutive newlines
+Error: NO_SPC_BFR_OPR       (line:  20, col:  24):	extra space before operator
+Error: TOO_FEW_TAB          (line:  24, col:   1):	Missing tabs for indent level
+Error: SPC_AFTER_PAR        (line:  27, col:  31):	Missing space after parenthesis (brace/bracket)
+Error: SPC_BFR_OPERATOR     (line:  27, col:  32):	missing space before operator
+Error: TOO_FEW_TAB          (line:  37, col:   1):	Missing tabs for indent level
+Error: TOO_MANY_LINES       (line:  48, col:   1):	Function has more than 25 lines
+so_long.h: Error!
+Error: EMPTY_LINE_FILE_START (line:   1, col:   1):	Empty line at start of file
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+Error: TOO_MANY_WS          (line:   2, col:   1):	Extra whitespaces for indent level
+Error: CONSECUTIVE_NEWLINES (line:   9, col:   1):	Consecutive newlines
+utils/ft_for_nbr.c: Error!
+Error: NEWLINE_PRECEDES_FUNC (line:  26, col:   1):	Functions must be separated by a newline
+Error: MISALIGNED_VAR_DECL  (line:  29, col:  13):	Misaligned variable declaration
+utils/ft_cmp.c: Error!
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+utils/get_next_line.c: Error!
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+utils/ft_for_str.c: OK!
+utils/ft_strdup.c: Error!
+Error: NEWLINE_PRECEDES_FUNC (line:  37, col:   1):	Functions must be separated by a newline
+Error: CONSECUTIVE_SPC      (line:  37, col:   7):	Two or more consecutives spaces
+Error: SPACE_BEFORE_FUNC    (line:  37, col:   8):	space before function name
+Error: TOO_FEW_TAB          (line:  39, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  39, col:   9):	Found space when expecting tab
+Error: CONSECUTIVE_SPC      (line:  39, col:  15):	Two or more consecutives spaces
+Error: SPACE_REPLACE_TAB    (line:  39, col:  15):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  41, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  41, col:   9):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  42, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  42, col:   9):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  43, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  43, col:  17):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  44, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  44, col:   9):	Found space when expecting tab
+utils/ft_printf.c: OK!
+utils/ft_strsdup.c: Error!
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+utils/utils.h: Error!
+Error: EMPTY_LINE_FILE_START (line:   1, col:   1):	Empty line at start of file
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+Error: PREPROC_BAD_INDENT   (line:   6, col:   1):	Bad preprocessor indentation
+Error: CONSECUTIVE_SPC      (line:  38, col:   7):	Two or more consecutives spaces
+Error: SPACE_REPLACE_TAB    (line:  38, col:   7):	Found space when expecting tab
+utils/get_next_line_utils.c: Error!
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+game/init_imgs.c: Error!
+Error: EMPTY_LINE_FILE_START (line:   1, col:   1):	Empty line at start of file
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+Error: TOO_FEW_TAB          (line:  10, col:   1):	Missing tabs for indent level
+Error: TOO_FEW_TAB          (line:  12, col:   1):	Missing tabs for indent level
+Error: TOO_FEW_TAB          (line:  14, col:   1):	Missing tabs for indent level
+Error: TOO_FEW_TAB          (line:  16, col:   1):	Missing tabs for indent level
+Error: TOO_FEW_TAB          (line:  18, col:   1):	Missing tabs for indent level
+Error: LINE_TOO_LONG        (line:  26, col:  82):	line too long
+Error: LINE_TOO_LONG        (line:  28, col:  82):	line too long
+game/helpers.c: Error!
+Error: EMPTY_LINE_FILE_START (line:   1, col:   1):	Empty line at start of file
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+Error: NEWLINE_PRECEDES_FUNC (line:  64, col:   1):	Functions must be separated by a newline
+game/move.c: Error!
+Error: EMPTY_LINE_FILE_START (line:   1, col:   1):	Empty line at start of file
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+Error: NO_SPC_BFR_OPR       (line:  13, col:  26):	extra space before operator
+Error: WRONG_SCOPE_COMMENT  (line:  14, col:   9):	Comment is invalid in this scope
+Error: LINE_TOO_LONG        (line:  34, col:  83):	line too long
+Error: SPACE_AFTER_KW       (line:  37, col:   9):	Missing space after keyword
+Error: EMPTY_LINE_FUNCTION  (line:  52, col:   1):	Empty line in function
+Error: TOO_MANY_TAB         (line:  61, col:   1):	Extra tabs for indent level
+Error: EMPTY_LINE_FUNCTION  (line:  64, col:   1):	Empty line in function
+Error: TOO_MANY_LINES       (line:  73, col:   1):	Function has more than 25 lines
+Error: CONSECUTIVE_NEWLINES (line:  75, col:   1):	Consecutive newlines
+Error: EMPTY_LINE_EOF       (line:  75, col:   1):	Empty line at end of file
+game/check_map.c: Error!
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+Error: SPC_BFR_OPERATOR     (line:  15, col:  23):	missing space before operator
+Error: WRONG_SCOPE_COMMENT  (line:  50, col:   9):	Comment is invalid in this scope
+Error: EMPTY_LINE_FUNCTION  (line:  57, col:   1):	Empty line in function
+game/init_map.c: Error!
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+Error: FORBIDDEN_CHAR_NAME  (line:  52, col:   5):	user defined identifiers should contain only lowercase characters, digits or '_'
+Error: FORBIDDEN_CHAR_NAME  (line:  52, col:   5):	user defined identifiers should contain only lowercase characters, digits or '_'
+game/moviments.c: Error!
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+game/check_map_2.c: Error!
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+Error: INCLUDE_START_FILE   (line:  22, col:   1):	Include must be at the start of file
+Error: INCLUDE_START_FILE   (line:  23, col:   1):	Include must be at the start of file
+Error: INCLUDE_START_FILE   (line:  24, col:   1):	Include must be at the start of file
+Error: SPC_AFTER_POINTER    (line:  26, col:   6):	space after pointer
+Error: SPACE_BEFORE_FUNC    (line:  26, col:   7):	space before function name
+Error: SPC_AFTER_POINTER    (line:  26, col:   7):	space after pointer
+Error: FORBIDDEN_CHAR_NAME  (line:  26, col:   8):	user defined identifiers should contain only lowercase characters, digits or '_'
+Error: SPC_AFTER_POINTER    (line:  26, col:  26):	space after pointer
+Error: SPC_AFTER_POINTER    (line:  26, col:  27):	space after pointer
+Error: BRACE_NEWLINE        (line:  26, col:  37):	Expected newline before brace
+Error: SPACE_EMPTY_LINE     (line:  27, col:   5):	Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  27, col:   5):	Comment is invalid in this scope
+Error: TOO_FEW_TAB          (line:  28, col:   1):	Missing tabs for indent level
+Error: VAR_DECL_START_FUNC  (line:  28, col:   1):	Variable declaration not at start of function
+Error: SPACE_REPLACE_TAB    (line:  28, col:   5):	Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  28, col:   8):	Found space when expecting tab
+Error: DECL_ASSIGN_LINE     (line:  28, col:  11):	Declaration and assignation on a single line
+Error: TOO_FEW_TAB          (line:  29, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  29, col:   5):	Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  29, col:   9):	Found space when expecting tab
+Error: SPC_AFTER_POINTER    (line:  29, col:  10):	space after pointer
+Error: SPC_AFTER_POINTER    (line:  29, col:  11):	space after pointer
+Error: FORBIDDEN_CHAR_NAME  (line:  29, col:  12):	user defined identifiers should contain only lowercase characters, digits or '_'
+Error: MISALIGNED_VAR_DECL  (line:  29, col:  12):	Misaligned variable declaration
+Error: DECL_ASSIGN_LINE     (line:  29, col:  25):	Declaration and assignation on a single line
+Error: LINE_TOO_LONG        (line:  29, col:  63):	line too long
+Error: WRONG_SCOPE_COMMENT  (line:  29, col:  63):	Comment is invalid in this scope
+Error: WRONG_SCOPE_COMMENT  (line:  29, col:  63):	Comment is invalid in this scope
+Error: LINE_TOO_LONG        (line:  29, col: 100):	line too long
+Error: TOO_FEW_TAB          (line:  30, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  30, col:   5):	Found space when expecting tab
+Error: NO_SPC_AFR_PAR       (line:  30, col:  29):	Extra space after parenthesis (brace/bracket)
+Error: TOO_FEW_TAB          (line:  30, col:  31):	Missing tabs for indent level
+Error: TOO_FEW_TAB          (line:  31, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  31, col:   9):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  32, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  32, col:   9):	Found space when expecting tab
+Error: RETURN_PARENTHESIS   (line:  32, col:  16):	Return value must be in parenthesis
+Error: TOO_FEW_TAB          (line:  33, col:   1):	Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  33, col:   5):	Space on empty line
+Error: EMPTY_LINE_FUNCTION  (line:  34, col:   1):	Empty line in function
+Error: SPACE_EMPTY_LINE     (line:  35, col:   5):	Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  35, col:   5):	Comment is invalid in this scope
+Error: TOO_FEW_TAB          (line:  36, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  36, col:   5):	Found space when expecting tab
+Error: NO_SPC_AFR_PAR       (line:  36, col:  30):	Extra space after parenthesis (brace/bracket)
+Error: TOO_FEW_TAB          (line:  36, col:  32):	Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  37, col:   9):	Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  37, col:   9):	Comment is invalid in this scope
+Error: TOO_FEW_TAB          (line:  38, col:   1):	Missing tabs for indent level
+Error: WRONG_SCOPE_VAR      (line:  38, col:   1):	Variable declared in incorrect scope
+Error: SPACE_REPLACE_TAB    (line:  38, col:   9):	Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  38, col:  12):	Found space when expecting tab
+Error: DECL_ASSIGN_LINE     (line:  38, col:  17):	Declaration and assignation on a single line
+Error: SPACE_EMPTY_LINE     (line:  40, col:   9):	Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  40, col:   9):	Comment is invalid in this scope
+Error: TOO_FEW_TAB          (line:  41, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  41, col:   9):	Found space when expecting tab
+Error: SPACE_AFTER_KW       (line:  41, col:  28):	Missing space after keyword
+Error: TOO_FEW_TAB          (line:  42, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  42, col:   9):	Found space when expecting tab
+Error: NO_SPC_AFR_PAR       (line:  42, col:  36):	Extra space after parenthesis (brace/bracket)
+Error: TOO_FEW_TAB          (line:  42, col:  38):	Missing tabs for indent level
+Error: TOO_FEW_TAB          (line:  43, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  43, col:  13):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  44, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  44, col:  13):	Found space when expecting tab
+Error: RETURN_PARENTHESIS   (line:  44, col:  20):	Return value must be in parenthesis
+Error: TOO_FEW_TAB          (line:  45, col:   1):	Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  45, col:   9):	Space on empty line
+Error: EMPTY_LINE_FUNCTION  (line:  46, col:   1):	Empty line in function
+Error: SPACE_EMPTY_LINE     (line:  47, col:   9):	Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  47, col:   9):	Comment is invalid in this scope
+Error: TOO_FEW_TAB          (line:  48, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  48, col:   9):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  49, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  49, col:   9):	Found space when expecting tab
+Error: CONSECUTIVE_SPC      (line:  49, col:  37):	Two or more consecutives spaces
+Error: WRONG_SCOPE_COMMENT  (line:  49, col:  39):	Comment is invalid in this scope
+Error: WRONG_SCOPE_COMMENT  (line:  49, col:  39):	Comment is invalid in this scope
+Error: EMPTY_LINE_FUNCTION  (line:  50, col:   1):	Empty line in function
+Error: TOO_FEW_TAB          (line:  51, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  51, col:   9):	Found space when expecting tab
+Error: EMPTY_LINE_FUNCTION  (line:  52, col:   1):	Empty line in function
+Error: SPACE_EMPTY_LINE     (line:  53, col:   9):	Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  53, col:   9):	Comment is invalid in this scope
+Error: LINE_TOO_LONG        (line:  54, col:   9):	line too long
+Error: SPACE_EMPTY_LINE     (line:  54, col:   9):	Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  54, col:   9):	Comment is invalid in this scope
+Error: LINE_TOO_LONG        (line:  54, col: 102):	line too long
+Error: TOO_FEW_TAB          (line:  55, col:   1):	Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  55, col:   5):	Space on empty line
+Error: EMPTY_LINE_FUNCTION  (line:  56, col:   1):	Empty line in function
+Error: SPACE_EMPTY_LINE     (line:  57, col:   5):	Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  57, col:   5):	Comment is invalid in this scope
+Error: TOO_FEW_TAB          (line:  58, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  58, col:   5):	Found space when expecting tab
+Error: EMPTY_LINE_FUNCTION  (line:  59, col:   1):	Empty line in function
+Error: TOO_FEW_TAB          (line:  60, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  60, col:   5):	Found space when expecting tab
+Error: RETURN_PARENTHESIS   (line:  60, col:  12):	Return value must be in parenthesis
+Error: TOO_MANY_LINES       (line:  61, col:   1):	Function has more than 25 lines
+Error: CONSECUTIVE_NEWLINES (line:  63, col:   1):	Consecutive newlines
+Error: CONSECUTIVE_NEWLINES (line:  64, col:   1):	Consecutive newlines
+Error: CONSECUTIVE_NEWLINES (line:  65, col:   1):	Consecutive newlines
+Error: CONSECUTIVE_NEWLINES (line:  66, col:   1):	Consecutive newlines
+Error: MISALIGNED_VAR_DECL  (line:  70, col:   9):	Misaligned variable declaration
+Error: MISALIGNED_VAR_DECL  (line:  71, col:   9):	Misaligned variable declaration
+Error: SPC_BFR_OPERATOR     (line: 120, col:  23):	missing space before operator
+Error: SPACE_AFTER_KW       (line: 126, col:  17):	Missing space after keyword
+game/init_game.c: Error!
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header

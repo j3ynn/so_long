@@ -22,7 +22,7 @@ void	ft_putchr(char j, int *count);
 void	ft_putstr(char *str, int *count);
 void	ft_putptr(void *ptr, int *count);
 void	ft_format(va_list args, const char frm, int *count);
-void	ft_free_strs(char **strs);
+void	ft_free_strs(char **strs, int flag);
 void	*ft_calloc(size_t nmemb, size_t size);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memset(void *s, int c, size_t n);

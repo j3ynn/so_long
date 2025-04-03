@@ -15,7 +15,7 @@ char	**ft_strsdup(char **strs)
 		str = ft_strdup(strs[i]);
 		if (!str)
 		{
-			ft_free_strs(dup);
+			ft_free_strs(dup, 0);
 			return (NULL);
 		}
 		dup[i] = str;
@@ -24,7 +24,7 @@ char	**ft_strsdup(char **strs)
 	return (dup);
 }
 
-void	ft_free_strs(char **strs)
+void	ft_free_strs(char **strs, int flag)
 {
 	size_t	i;
 
@@ -35,6 +35,10 @@ void	ft_free_strs(char **strs)
 		i++;
 	}
 	free(strs);
+	if (flag == 1)
+		ft_printf("Error: one or more candies are unreachable!\n");
+	if (flag == 2)
+		ft_printf("Error: the player cannot reach the exit\n");
 }
 
 void	*ft_calloc(size_t nmemb, size_t size)

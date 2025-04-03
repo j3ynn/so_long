@@ -23,16 +23,18 @@ int	main(int argc, char **argv)
 	if (argc != 2 || ft_cmp(argv[1], ".ber"))
 	return (ft_printf("non va bene!\n"), 1);
 	init_real_game(game, argv);
-	map_str(game, open(argv[1], O_RDONLY));
+	map_str(game, open(argv[1], O_RDONLY), 0);
+	if (open(argv[1], O_RDONLY)< 0)
+	{
+		ft_printf("Error: file not exist!\n");
+		return (1);
+	}
 	if (!check_map(game))
 		return (1);
-	ft_printf("PROVA MAIN\n");
 	if (!game->mlx_ptr)
-	return (1);
+		return (1);
 	game->mlx_win = mlx_new_window(game->mlx_ptr,
-		game->map->width * 32, game->map->height * 32,
-		"slay");
-	ft_printf("ho superato slay");
+		game->map->width * 32, game->map->height * 32, "slay");
 	if (!game->mlx_win)
 		mlx_destroy_window(game->mlx_ptr, game->mlx_win);
 	init_imgs(game);

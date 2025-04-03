@@ -10,12 +10,10 @@ int	all_map(t_game *game)
 	return (1);
 }
 
-int	map_str(t_game *game, int fd)
+int	map_str(t_game *game, int fd, int i)
 {
 	char	*line;
-	int		i;
 
-	i = 0;
 	line = get_next_line(fd);
 	if (!line)
 		return (0);
@@ -46,8 +44,11 @@ int	init_map(t_game *game)
 		return (0);
 	fd = open(game->file_path, O_RDONLY);
 	if (fd < 0)
+	{
+		ft_printf("Error: file not exist!");
 		return (0);
-	if (!map_str(game, fd))
+	}
+	if (!map_str(game, fd, 0))
 	{
 		free(game->map);
 		close(fd);

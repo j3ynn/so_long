@@ -64,14 +64,12 @@ char** copiaMatrice(char** matrice) {
 
 
 
-int	check_path(char **map)
+int	check_path(char **map, int i)
 {
 	char	**dupmap;
 	int	x;
 	int	y;
-	int	i;
 
-	i = 0;
 	dupmap = copiaMatrice(map);
 	if (dupmap == NULL)
 		return (0);
@@ -81,18 +79,17 @@ int	check_path(char **map)
 	{
 		if (ft_strchr(dupmap[i], 'E') != NULL)
 		{
-			ft_free_strs(dupmap);
+			ft_free_strs(dupmap, 1);
 			return (0);
 		}
 		if (ft_strchr(dupmap[i], 'C') != NULL)
 		{
-			ft_printf("Error: il player non puo' raggiungere l'uscita\n");
-			ft_free_strs(dupmap);
+			ft_free_strs(dupmap, 2);
 			return (0);
 		}
 		i ++;
 	}
-	ft_free_strs(dupmap);
+	ft_free_strs(dupmap, 0);
 	return (1);
 }
 

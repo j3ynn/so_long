@@ -61,7 +61,7 @@ int		move_kays(int keycode, t_game *game);
 int		check_CE(t_game *game);
 int		check_route(t_game *game);
 int		all_map(t_game *game);
-int		map_str(t_game *game, int fd);
+int		map_str(t_game *game, int fd, int i);
 int		init_map(t_game *game);
 int		game_init(t_game *game);
 int		check_num(t_game *game);
@@ -69,5 +69,5 @@ int		check_walls_y(char **map);
 int		check_walls_x(char *line);
 int		check_map(t_game *game);
 int		check_shape(char **map);
-int		check_path(char **map);
+int		check_path(char **map, int i);
 #endif
