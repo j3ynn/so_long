@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/04 14:09:31 by jbellucc          #+#    #+#             */
+/*   Updated: 2025/04/04 19:28:34 by jbellucc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef UTILS_H
 # define UTILS_H
 
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 9000
+#  define BUFFER_SIZE 9000
 # endif
 
 # include <unistd.h>
@@ -35,6 +46,6 @@ char	*ft_extraction_storage(char storage[BUFFER_SIZE]);
 char	*ft_strdup(const char *s);
 char	**ft_strsdup(char **strs);
 
-size_t  ft_strslen(char **mat);
+size_t	ft_strslen(char **mat);
 
 #endif

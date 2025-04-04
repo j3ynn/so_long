@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   helpers.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/04 14:08:13 by jbellucc          #+#    #+#             */
+/*   Updated: 2025/04/04 18:06:40 by jbellucc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../so_long.h"
 
@@ -61,6 +72,7 @@ void	save_position(t_game *game)
 		y++;
 	}
 }
+
 void	clean_img(t_game *game)
 {
 	mlx_destroy_image(game->mlx_ptr, game->wall);

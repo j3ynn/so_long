@@ -1,11 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/04 14:09:46 by jbellucc          #+#    #+#             */
+/*   Updated: 2025/04/04 19:36:15 by jbellucc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-# ifndef SO_LONG_H
+#ifndef SO_LONG_H
 # define SO_LONG_H
+
 # include "./utils/utils.h"
 # include "mlx/mlx.h"
 # include <fcntl.h>
 # include <stddef.h>
-
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
 
 typedef struct s_map
 {
@@ -21,8 +35,6 @@ typedef struct s_game
 	char	**mapcopy;
 	void	*mlx_ptr;
 	void	*mlx_win;
-	//da eliminare
-	//int		mlx_destroy_image(void *mlx_ptr, void *img_ptr);
 	void	*wall;
 	void	*floor;
 	void	*player;
@@ -55,10 +67,11 @@ void	find_cord(char **map, int *start_x, int *start_y);
 void	clean_img(t_game *game);
 void	save_point(t_game *game, char c);
 void	save_num(char c, t_game *game);
+void	move_pc2(t_game *game, int new_x, int new_y);
 
 int		exit_hook(t_game *game);
 int		move_kays(int keycode, t_game *game);
-int		check_CE(t_game *game);
+int		check_ce(t_game *game);
 int		check_route(t_game *game);
 int		all_map(t_game *game);
 int		map_str(t_game *game, int fd, int i);
@@ -69,5 +82,5 @@ int		check_walls_y(char **map);
 int		check_walls_x(char *line);
 int		check_map(t_game *game);
 int		check_shape(char **map);
-int		check_path(char **map, int i);
+int		check_path(int i, t_map *maps);
 #endif

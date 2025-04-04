@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_map.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/04 14:08:41 by jbellucc          #+#    #+#             */
+/*   Updated: 2025/04/04 18:24:13 by jbellucc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../so_long.h"
 
 void	copy_map(t_game *game)
@@ -49,7 +61,7 @@ void	render_mapcopy(t_game *game)
 	}
 }
 
-int	check_CE(t_game *game)
+int	check_ce(t_game *game)
 {
 	int	y;
 	int	x;
@@ -76,7 +88,7 @@ int	check_route(t_game *game)
 	copy_map(game);
 	save_position(game);
 	path_map(game, game->y, game->x);
-	if (check_CE(game))
+	if (check_ce(game))
 		return (1);
 	else
 		return (0);

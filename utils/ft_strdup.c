@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: je <je@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 16:31:40 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/03/31 18:03:15 by je               ###   ########.fr       */
+/*   Updated: 2025/04/04 19:31:33 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,13 @@ char	*ft_strdup(const char *s)
 	*s_dup = '\0';
 	return (s2);
 }
-/*int main (int ac, char **av)
-{
-	printf("%s\n", ft_strdup((const char *)av[1]));
-}*/
-size_t  ft_strslen(char **mat)
-{
-        size_t  i;
 
-        i = 0;
-        while (mat && mat[i] != NULL)
-                i++;
-        return (i);
+size_t	ft_strslen(char **mat)
+{
+	size_t	i;
+
+	i = 0;
+	while (mat && mat[i] != NULL)
+		i++;
+	return (i);
 }

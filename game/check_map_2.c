@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_map_2.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/04 14:07:47 by jbellucc          #+#    #+#             */
+/*   Updated: 2025/04/04 18:44:51 by jbellucc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../so_long.h"
 
 void	fill_path(char **map, int x, int y);
@@ -19,58 +31,39 @@ int	check_shape(char **map)
 	return (1);
 }
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+char	**copy_map_pat(t_map *maps)
+{
+	int		y;
+	int		x;
+	char	**dupmap;
 
-char** copiaMatrice(char** matrice) {
-    // Alloca una matrice dinamica
-    int i = 0;
-    char** nuovaMatrice = (char**)malloc(sizeof(char*) * 10); // Dimensione arbitraria per iniziare
-    if (nuovaMatrice == NULL) {
-        printf("Memoria insufficiente\n");
-        return NULL;
-    }
-
-    // Cicla sulla matrice di stringhe, usando `while` finché non trova NULL
-    while (matrice[i] != NULL) {
-        // Calcola la lunghezza della stringa escludendo l'ultimo carattere
-        int len = strlen(matrice[i]) - 1;
-
-        // Alloca memoria per la nuova stringa
-        nuovaMatrice[i] = (char*)malloc((len + 1) * sizeof(char));
-        if (nuovaMatrice[i] == NULL) {
-            printf("Memoria insufficiente per la stringa %d\n", i);
-            return NULL;
-        }
-
-        // Copia i caratteri escluso l'ultimo
-        strncpy(nuovaMatrice[i], matrice[i], len);
-        nuovaMatrice[i][len] = '\0';  // Assicurati che la stringa sia terminata
-
-        i++;
-
-        // Ridimensiona la matrice se necessario
-        // In un caso reale sarebbe necessario una logica per ridimensionare dinamicamente la memoria
-    }
-
-    // Aggiungi NULL alla fine della matrice
-    nuovaMatrice[i] = NULL;
-
-    return nuovaMatrice;
+	y = 0;
+	dupmap = malloc(sizeof(char *) * maps->height);
+	if (!dupmap)
+		return (NULL);
+	while (y < maps->height)
+	{
+		x = 0;
+		dupmap[y] = malloc(sizeof(char) * (maps->width + 1));
+		if (!dupmap[y])
+			return (NULL);
+		while (x < maps->width)
+		{
+			dupmap[y][x] = maps->maps[y][x];
+			x++;
+		}
+		y++;
+	}
+	return (dupmap);
 }
 
-
-
-
-
-int	check_path(char **map, int i)
+int	check_path(int i, t_map *maps)
 {
 	char	**dupmap;
-	int	x;
-	int	y;
+	int		x;
+	int		y;
 
-	dupmap = copiaMatrice(map);
+	dupmap = copy_map_pat(maps);
 	if (dupmap == NULL)
 		return (0);
 	find_cord(dupmap, &x, &y);
@@ -117,13 +110,13 @@ void	find_cord(char **map, int *start_x, int *start_y)
 	while (map[y])
 	{
 		x = 1;
-		while (x < len-1)
+		while (x < len -1)
 		{
 			if (map[y][x] == 'P')
 			{
 				*start_x = x;
 				*start_y = y;
-				return;
+				return ;
 			}
 			x ++;
 		}

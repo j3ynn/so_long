@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_map.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/04 14:08:07 by jbellucc          #+#    #+#             */
+/*   Updated: 2025/04/04 18:17:48 by jbellucc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../so_long.h"
 #include "stdio.h"
 
@@ -12,7 +24,7 @@ int	check_num(t_game *game)
 	while ((size_t)y < ft_strslen(game->map->maps))
 	{
 		x = 0;
-		while (x < len-1)
+		while (x < len -1)
 		{
 			if (game->map->maps[y][x] != 'C' && game->map->maps[y][x] != 'E'
 				&& game->map->maps[y][x] != 'P' && game->map->maps[y][x] != '0'
@@ -47,14 +59,12 @@ int	check_walls_y(char **map)
 		return (0);
 	while (map[y + 1])
 	{
-		//printf("%c %c --- \n",map[y][0],map[y][len -2]);
 		if (map[y][0] != '1')
 			return (0);
 		if (map[y][len - 2] != '1')
 			return (0);
 		y ++;
 	}
-
 	if (!check_walls_x(map[y]))
 		return (0);
 	return (1);
@@ -96,7 +106,7 @@ int	check_map(t_game *game)
 		ft_printf("Error: invalid elements on the map!\n");
 		return (0);
 	}
-	if (!check_path(game->map->maps, 0))
+	if (!check_path(0, game->map))
 		return (0);
 	return (1);
 }
