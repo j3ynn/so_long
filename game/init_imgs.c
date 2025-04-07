@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_imgs.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: je <je@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:08:37 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/04/07 15:57:55 by je               ###   ########.fr       */
+/*   Updated: 2025/04/07 16:38:50 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ void	init_imgs(t_game *game)
 	int	height;
 	int	width;
 
-	game->floor = mlx_xpm_file_to_image(game->mlx_pointer, "./graphics/base.xpm",
-			&width, &height);
-	game->wall = mlx_xpm_file_to_image(game->mlx_pointer, "./graphics/bush.xpm",
-			&width, &height);
-	game->candy = mlx_xpm_file_to_image(game->mlx_pointer, "./graphics/candy.xpm",
-			&width, &height);
-	game->player = mlx_xpm_file_to_image(game->mlx_pointer, "./graphics/kid1.xpm",
-			&width, &height);
-	game->exit = mlx_xpm_file_to_image(game->mlx_pointer, "./graphics/van.xpm",
-			&width, &height);
+	game->floor = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./graphics/base.xpm", &width, &height);
+	game->wall = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./graphics/bush.xpm", &width, &height);
+	game->candy = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./graphics/candy.xpm", &width, &height);
+	game->player = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./graphics/kid1.xpm", &width, &height);
+	game->exit = mlx_xpm_file_to_image(game->mlx_pointer,
+			"./graphics/van.xpm", &width, &height);
 }
 
 void	associate_imgs(t_game *game, int x, int y, char chctr)
@@ -41,7 +41,9 @@ void	associate_imgs(t_game *game, int x, int y, char chctr)
 		mlx_put_image_to_window(game->mlx_pointer, game->w_mlx,
 			game->player, x, y);
 	else if (chctr == 'C')
-		mlx_put_image_to_window(game->mlx_pointer, game->w_mlx, game->candy, x, y);
+		mlx_put_image_to_window(game->mlx_pointer,
+			game->w_mlx, game->candy, x, y);
 	else if (chctr == 'E')
-		mlx_put_image_to_window(game->mlx_pointer, game->w_mlx, game->exit, x, y);
+		mlx_put_image_to_window(game->mlx_pointer,
+			game->w_mlx, game->exit, x, y);
 }
