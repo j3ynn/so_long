@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: je <je@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:09:35 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/04/04 19:43:22 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/04/07 15:54:10 by je               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 
 static void	init_real_game(t_game *game, char **argv)
 {
-	game->mlx_ptr = mlx_init();
+	game->mlx_pointer = mlx_init();
 	game->map = ft_calloc(1, sizeof(t_map));
-	game->file_path = argv[1];
+	game->path = argv[1];
 	game->c_player = 0;
-	game->c_coin = 0;
+	game->c_candy = 0;
 	game->c_exit = 0;
 	game->steps = 0;
 }
 
 void	main_2(t_game *game)
 {
-	if (!game->mlx_win)
-		mlx_destroy_window(game->mlx_ptr, game->mlx_win);
+	if (!game->w_mlx)
+		mlx_destroy_window(game->mlx_pointer, game->w_mlx);
 	init_imgs(game);
 	draw_map(game);
 	save_point(game, 'P');
-	mlx_hook(game->mlx_win, 2, 1L << 0, move_kays, game);
-	mlx_hook(game->mlx_win, 17, 0, exit_hook, game);
-	mlx_loop(game->mlx_ptr);
+	mlx_hook(game->w_mlx, 2, 1L << 0, move_kays, game);
+	mlx_hook(game->w_mlx, 17, 0, exit_hook, game);
+	mlx_loop(game->mlx_pointer);
 	back_free(game);
 }
 
@@ -55,9 +55,9 @@ int	main(int argc, char **argv)
 	}
 	if (!check_map(game))
 		return (1);
-	if (!game->mlx_ptr)
+	if (!game->mlx_pointer)
 		return (1);
-	game->mlx_win = mlx_new_window(game->mlx_ptr,
+	game->w_mlx = mlx_new_window(game->mlx_pointer,
 			game->map->width * 32, game->map->height * 32, "slay");
 	main_2(game);
 	return (0);

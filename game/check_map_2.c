@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: je <je@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:07:47 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/04/04 18:44:51 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/04/07 16:11:56 by je               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ int	check_shape(char **map)
 
 char	**copy_map_pat(t_map *maps)
 {
-	int		y;
-	int		x;
 	char	**dupmap;
+	int		x;
+	int		y;
 
+	dupmap = malloc(sizeof(char *) * maps->height + 1);
 	y = 0;
-	dupmap = malloc(sizeof(char *) * maps->height);
 	if (!dupmap)
 		return (NULL);
 	while (y < maps->height)
@@ -60,8 +60,8 @@ char	**copy_map_pat(t_map *maps)
 int	check_path(int i, t_map *maps)
 {
 	char	**dupmap;
-	int		x;
 	int		y;
+	int		x;
 
 	dupmap = copy_map_pat(maps);
 	if (dupmap == NULL)

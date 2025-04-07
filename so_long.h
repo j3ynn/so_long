@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: je <je@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:09:46 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/04/04 19:36:15 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/04/07 16:10:11 by je               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,25 +31,25 @@ typedef struct s_map
 typedef struct s_game
 {
 	t_map	*map;
-	char	*file_path;
-	char	**mapcopy;
-	void	*mlx_ptr;
-	void	*mlx_win;
+	char	*path;
+	char	**copymap;
+	void	*mlx_pointer;
+	void	*w_mlx;
 	void	*wall;
 	void	*floor;
 	void	*player;
-	void	*coin;
+	void	*candy;
 	void	*exit;
 	int		x;
 	int		y;
-	int		c_coin;
+	int		c_candy;
 	int		c_player;
 	int		c_exit;
 	int		steps;
 }	t_game;
 
 void	init_imgs(t_game *game);
-void	associate_imgs(t_game *game, int x, int y, char tile);
+void	associate_imgs(t_game *game, int x, int y, char chctr);
 void	draw_map(t_game *game);
 void	back_free(t_game *game);
 void	save_position(t_game *game);

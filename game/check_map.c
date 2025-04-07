@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: je <je@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:08:07 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/04/04 18:17:48 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/04/07 16:10:15 by je               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	check_num(t_game *game)
 void	save_num(char c, t_game *game)
 {
 	if (c == 'C')
-		game->c_coin++;
+		game->c_candy++;
 	if (c == 'E')
 		game->c_exit++;
 	if (c == 'P')

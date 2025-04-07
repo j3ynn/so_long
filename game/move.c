@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: je <je@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:08:45 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/04/04 18:47:53 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/04/07 16:05:59 by je               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	move_kays(int keycode, t_game *game)
 	else if (keycode == 119 || keycode == 65362)
 	{
 		up(game);
-		ft_printf("%d\n", game->c_coin);
+		ft_printf("%d\n", game->c_candy);
 	}
 	else if (keycode == 115 || keycode == 65364)
 		down(game);
@@ -41,10 +41,10 @@ void	move_pc(t_game *game, int new_x, int new_y)
 	if (game->map->maps[new_y][new_x] != '1')
 	{
 		if (game->map->maps[new_y][new_x] == 'C')
-			game->c_coin--;
+			game->c_candy--;
 		if (game->map->maps[new_y][new_x] == 'E')
 		{
-			if (game->c_coin == 0)
+			if (game->c_candy == 0)
 			{
 				ft_printf("hai vinto veramente ? ;)\n");
 				back_free(game);
@@ -58,8 +58,8 @@ void	move_pc(t_game *game, int new_x, int new_y)
 void	move_pc2(t_game *game, int new_x, int new_y)
 {
 	{
-		if (game->map->maps[new_y][new_x] == 'E' && game->c_coin != 0)
-			ft_printf("NON Se PuOoOoO\n");
+		if (game->map->maps[new_y][new_x] == 'E' && game->c_candy != 0)
+			ft_printf("NON Se POoOoO\n");
 		else
 		{
 			game->steps++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: je <je@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:08:25 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/04/04 14:08:26 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/04/07 15:57:07 by je               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	all_map(t_game *game)
 	game->map = malloc(sizeof(t_map));
 	if (!game->map)
 		return (0);
-	game->map->height = 0;
 	game->map->maps = NULL;
+	game->map->height = 0;
 	return (1);
 }
 
@@ -54,7 +54,7 @@ int	init_map(t_game *game)
 
 	if (!all_map(game))
 		return (0);
-	fd = open(game->file_path, O_RDONLY);
+	fd = open(game->path, O_RDONLY);
 	if (fd < 0)
 	{
 		ft_printf("Error: file not exist!");
@@ -70,42 +70,3 @@ int	init_map(t_game *game)
 	return (1);
 }
 
-int	game_init(t_game *game)
-{
-	game->c_player = 0;
-	game->c_coin = 0;
-	game->c_exit = 0;
-	game->steps = 0;
-	game->wall = NULL;
-	game->floor = NULL;
-	game->coin = NULL;
-	game->player = NULL;
-	game->exit = NULL;
-	ft_printf("run :)\n");
-	return (1);
-}
-
-void	save_point(t_game *game, char c)
-{
-	int	x;
-	int	y;
-
-	x = 0;
-	y = 0;
-	while (game->map->maps[x])
-	{
-		y = 0;
-		while (game->map->maps[x][y])
-		{
-			if (game->map->maps[x][y] == c)
-			{
-				game->x = y;
-				game->y = x;
-				return ;
-			}
-			y++;
-		}
-		x++;
-	}
-	return ;
-}

@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   helpers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: je <je@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:08:13 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/04/04 18:06:40 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/04/07 16:07:34 by je               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-//DA MODIFICARE UN PO DI COSE
 void	clear_mat(char **matrix, int height)
 {
 	int	j;
@@ -33,8 +32,8 @@ void	back_free(t_game *game)
 {
 	if (!game)
 		return ;
-	if (game->mlx_ptr && game->mlx_win)
-		mlx_destroy_window(game->mlx_ptr, game->mlx_win);
+	if (game->mlx_pointer && game->w_mlx)
+		mlx_destroy_window(game->mlx_pointer, game->w_mlx);
 	if (game->map)
 	{
 		if (game->map->maps)
@@ -43,8 +42,8 @@ void	back_free(t_game *game)
 			free(game->map);
 		}
 	}
-	if (game->mapcopy)
-		clear_mat(game->mapcopy, game->map->height);
+	if (game->copymap)
+		clear_mat(game->copymap, game->map->height);
 	clean_img(game);
 	free(game);
 	exit(0);
@@ -75,9 +74,9 @@ void	save_position(t_game *game)
 
 void	clean_img(t_game *game)
 {
-	mlx_destroy_image(game->mlx_ptr, game->wall);
-	mlx_destroy_image(game->mlx_ptr, game->floor);
-	mlx_destroy_image(game->mlx_ptr, game->player);
-	mlx_destroy_image(game->mlx_ptr, game->coin);
-	mlx_destroy_image(game->mlx_ptr, game->exit);
+	mlx_destroy_image(game->mlx_pointer, game->player);
+	mlx_destroy_image(game->mlx_pointer, game->wall);
+	mlx_destroy_image(game->mlx_pointer, game->floor);
+	mlx_destroy_image(game->mlx_pointer, game->exit);
+	mlx_destroy_image(game->mlx_pointer, game->candy);
 }

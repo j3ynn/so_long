@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: je <je@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:08:41 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/04/04 18:24:13 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/04/07 16:03:46 by je               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 void	copy_map(t_game *game)
 {
-	int	y;
 	int	x;
+	int	y;
 
 	y = 0;
-	game->mapcopy = malloc(sizeof(char *) * game->map->height);
-	if (!game->mapcopy)
+	game->copymap = malloc(sizeof(char *) * game->map->height);
+	if (!game->copymap)
 		return ;
 	while (y < game->map->height)
 	{
 		x = 0;
-		game->mapcopy[y] = malloc(sizeof(char) * (game->map->width + 1));
-		if (!game->mapcopy[y])
+		game->copymap[y] = malloc(sizeof(char) * (game->map->width + 1));
+		if (!game->copymap[y])
 			return ;
 		while (x < game->map->width)
 		{
-			game->mapcopy[y][x] = game->map->maps[y][x];
+			game->copymap[y][x] = game->map->maps[y][x];
 			x++;
 		}
 		y++;
@@ -40,13 +40,13 @@ void	path_map(t_game *game, int y, int x)
 {
 	if (y < 0 || y >= game->map->height || x < 0 || x >= game->map->width)
 		return ;
-	if (game->mapcopy[y][x] == '1' || game->mapcopy[y][x] == '#')
+	if (game->copymap[y][x] == '1' || game->copymap[y][x] == '#')
 		return ;
-	game->mapcopy[y][x] = '#';
-	path_map(game, y - 1, x);
+	game->copymap[y][x] = '#';
 	path_map(game, y, x - 1);
-	path_map(game, y + 1, x);
+	path_map(game, y - 1, x);
 	path_map(game, y, x + 1);
+	path_map(game, y + 1, x);
 }
 
 void	render_mapcopy(t_game *game)
@@ -56,15 +56,15 @@ void	render_mapcopy(t_game *game)
 	y = 0;
 	while (y < game->map->height)
 	{
-		ft_printf("%s\n", game->mapcopy[y]);
+		ft_printf("%s\n", game->copymap[y]);
 		y++;
 	}
 }
 
 int	check_ce(t_game *game)
 {
-	int	y;
 	int	x;
+	int	y;
 
 	y = 0;
 	while (y < game->map->height)
@@ -72,7 +72,7 @@ int	check_ce(t_game *game)
 		x = 0;
 		while (x < game->map->width)
 		{
-			if (game->mapcopy[y][x] == 'C' || game->mapcopy[y][x] == 'E')
+			if (game->copymap[y][x] == 'C' || game->copymap[y][x] == 'E')
 			{
 				return (0);
 			}
