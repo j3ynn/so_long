@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: je <je@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:08:07 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/04/07 16:10:15 by je               ###   ########.fr       */
+/*   Updated: 2025/04/10 16:56:45 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-#include "stdio.h"
 
 int	check_num(t_game *game)
 {

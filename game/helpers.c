@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   helpers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: je <je@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:08:13 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/04/07 16:07:34 by je               ###   ########.fr       */
+/*   Updated: 2025/04/10 17:09:21 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	back_free(t_game *game)
 	if (game->copymap)
 		clear_mat(game->copymap, game->map->height);
 	clean_img(game);
+	free(game->mlx_pointer);
 	free(game);
 	exit(0);
 }

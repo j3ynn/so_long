@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   check_map_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: je <je@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:07:47 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/04/07 16:11:56 by je               ###   ########.fr       */
+/*   Updated: 2025/04/10 17:02:42 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
 void	fill_path(char **map, int x, int y);
-void	find_cord(char **map, int *start_x, int *start_y);
 
 int	check_shape(char **map)
 {
@@ -37,7 +36,7 @@ char	**copy_map_pat(t_map *maps)
 	int		x;
 	int		y;
 
-	dupmap = malloc(sizeof(char *) * maps->height + 1);
+	dupmap = malloc(sizeof(char *) * (maps->height + 1));
 	y = 0;
 	if (!dupmap)
 		return (NULL);
@@ -52,8 +51,10 @@ char	**copy_map_pat(t_map *maps)
 			dupmap[y][x] = maps->maps[y][x];
 			x++;
 		}
+		dupmap[y][x] = 0;
 		y++;
 	}
+	dupmap[y] = 0;
 	return (dupmap);
 }
 
@@ -66,7 +67,7 @@ int	check_path(int i, t_map *maps)
 	dupmap = copy_map_pat(maps);
 	if (dupmap == NULL)
 		return (0);
-	find_cord(dupmap, &x, &y);
+	find_cord(maps, dupmap, &x, &y);
 	fill_path(dupmap, x, y);
 	while (dupmap[i])
 	{
@@ -99,13 +100,13 @@ void	fill_path(char **map, int x, int y)
 		fill_path(map, x + 1, y);
 }
 
-void	find_cord(char **map, int *start_x, int *start_y)
+void	find_cord(t_map *maps, char **map, int *start_x, int *start_y)
 {
 	int	x;
 	int	y;
 	int	len;
 
-	len = ft_strlen(map[0]);
+	len = maps->width;
 	y = 1;
 	while (map[y])
 	{

@@ -6,11 +6,12 @@
 /*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 16:46:21 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/04/04 19:32:33 by jbellucc         ###   ########.fr       */
+/*   Updated: 2025/04/10 16:51:55 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
+#include <stdio.h>
 
 int	ft_strlen(const char *str)
 {
@@ -19,7 +20,7 @@ int	ft_strlen(const char *str)
 	if (!str)
 		return (0);
 	p = 0;
-	while (str[p] != '\0')
+	while (str[p])
 		p ++;
 	return (p);
 }

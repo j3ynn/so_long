@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: je <je@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:09:46 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/04/07 16:10:11 by je               ###   ########.fr       */
+/*   Updated: 2025/04/10 16:48:04 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,7 @@ void	right(t_game *game);
 void	copy_map(t_game *game);
 void	render_mapcopy(t_game *game);
 void	fill_path(char **map, int x, int y);
-void	find_cord(char **map, int *start_x, int *start_y);
-void	fill_path(char **map, int x, int y);
-void	find_cord(char **map, int *start_x, int *start_y);
+void	find_cord(t_map *maps, char **map, int *start_x, int *start_y);
 void	clean_img(t_game *game);
 void	save_point(t_game *game, char c);
 void	save_num(char c, t_game *game);

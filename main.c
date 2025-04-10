@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: je <je@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jbellucc <jbellucc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:09:35 by jbellucc          #+#    #+#             */
-/*   Updated: 2025/04/07 15:54:10 by je               ###   ########.fr       */
+/*   Updated: 2025/04/10 18:29:15 by jbellucc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,16 @@ int	main(int argc, char **argv)
 	if (!game)
 		return (1);
 	if (argc != 2 || ft_cmp(argv[1], ".ber"))
-		return (ft_printf("non va bene!\n"), 1);
-	init_real_game(game, argv);
-	map_str(game, open(argv[1], O_RDONLY), 0);
+		return (ft_printf("not god!\n"), 1);
 	if (open(argv[1], O_RDONLY) < 0)
 	{
 		ft_printf("Error: file not exist!\n");
+		free(game);
 		return (1);
+		
 	}
+	init_real_game(game, argv);
+	map_str(game, open(argv[1], O_RDONLY), 0);
 	if (!check_map(game))
 		return (1);
 	if (!game->mlx_pointer)
@@ -60,5 +62,6 @@ int	main(int argc, char **argv)
 	game->w_mlx = mlx_new_window(game->mlx_pointer,
 			game->map->width * 32, game->map->height * 32, "slay");
 	main_2(game);
+	free(game->w_mlx);
 	return (0);
 }
